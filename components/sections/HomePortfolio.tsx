@@ -47,7 +47,7 @@ export function HomePortfolio() {
                             rel="noopener noreferrer"
                             className={`portfolio-item group block cursor-pointer ${idx % 2 === 1 ? 'md:mt-32' : ''}`}
                         >
-                            <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5">
+                            <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5 border border-black/10">
                                 <Image
                                     src={project.image}
                                     alt={project.client}

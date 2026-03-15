@@ -69,7 +69,7 @@ export default function WorkPage() {
                             rel="noopener noreferrer"
                             className={`work-card group block cursor-pointer ${idx % 2 === 1 ? 'md:mt-32' : ''}`}
                         >
-                            <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5">
+                            <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5 border border-black/10">
                                 <Image
                                     src={project.image}
                                     alt={project.client}
