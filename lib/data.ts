@@ -69,7 +69,7 @@ export const projects: Project[] = [
     {
         slug: "blend-cafe",
         client: "Blend",
-        industry: "Food & Beverage",
+        industry: "Fullstack WebApp",
         metric: "Café Discovery App",
         description: "A modern web app that helps coffee lovers discover cafés by vibe. Featuring authentication, real-time search, and a beautifully crafted UI.",
         image: "/projects/blend.webp",
