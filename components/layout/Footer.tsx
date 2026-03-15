@@ -31,9 +31,9 @@ export function Footer() {
 
                     <div className="flex flex-col gap-4">
                         <h4 className="font-subhead text-sm text-white/50 mb-4">Connect</h4>
-                        <a href="#" className="font-body hover:text-brand-accent transition-colors w-fit">Instagram</a>
-                        <a href="#" className="font-body hover:text-brand-accent transition-colors w-fit">LinkedIn</a>
-                        <a href="#" className="font-body hover:text-brand-accent transition-colors w-fit">Facebook</a>
+                        <a href="https://www.instagram.com/sondr.designs/" target="_blank" rel="noopener noreferrer" className="font-body hover:text-brand-accent transition-colors w-fit">Instagram</a>
+                        <a href="https://www.linkedin.com/company/sondrdesigns/" target="_blank" rel="noopener noreferrer" className="font-body hover:text-brand-accent transition-colors w-fit">LinkedIn</a>
+                        <a href="https://www.facebook.com/people/Sondr-Designs/61583928612114/" target="_blank" rel="noopener noreferrer" className="font-body hover:text-brand-accent transition-colors w-fit">Facebook</a>
                     </div>
 
                 </div>
