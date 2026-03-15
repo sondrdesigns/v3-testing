@@ -42,8 +42,8 @@ export default function WorkPage() {
                 </div>
 
                 {/* Sticky Filter */}
-                <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md py-4 border-b border-black/10 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-24 lg:px-24 w-screen overflow-x-auto no-scrollbar">
-                    <div className="flex gap-8 whitespace-nowrap min-w-max">
+                <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md py-4 border-b border-black/10 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-24 lg:px-24 w-screen overflow-x-auto no-scrollbar flex items-center min-h-[56px]">
+                    <div className="flex gap-8 whitespace-nowrap min-w-max justify-center items-center">
                         {industries.map((industry) => (
                             <button
                                 key={industry}
