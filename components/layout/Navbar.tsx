@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -30,6 +31,18 @@ export function Navbar() {
 
     return (
         <>
+            {/* Logo — sits outside the blended header so it's never inverted */}
+            <Link href="/" className="fixed top-0 left-1/2 -translate-x-1/2 z-[60] h-12 flex items-center">
+                <Image
+                            src="/favicon-opt.png"
+                    alt="Sondr Designs"
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                    priority
+                />
+            </Link>
+
             <header
                 className={cn(
                     "fixed top-0 w-full z-50 transition-all duration-700 border-b border-transparent",
@@ -59,10 +72,8 @@ export function Navbar() {
                         {mobileMenuOpen ? <X size={24} className={isScrolled ? "text-black" : "text-white"} /> : <Menu size={24} />}
                     </button>
 
-                    {/* Centered logo */}
-                    <Link href="/" className="font-heading text-sm tracking-tight relative z-50 text-center justify-self-center">
-                        Sondr Designs
-                    </Link>
+                    {/* Invisible spacer for the logo column */}
+                    <div className="justify-self-center w-9 h-9" />
 
                     {/* Right links */}
                     <nav className="hidden md:flex gap-8 justify-start">
@@ -77,7 +88,7 @@ export function Navbar() {
                         ))}
                     </nav>
 
-                    {/* Spacer on mobile to keep logo centered */}
+                    {/* Spacer on mobile to keep layout centered */}
                     <div className="md:hidden" />
                 </div>
             </header>

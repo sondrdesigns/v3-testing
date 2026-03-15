@@ -31,7 +31,7 @@ export default function StudioPage() {
                     <div className="flex flex-col gap-6 w-full md:w-1/2">
                         <h2 className="font-subhead uppercase tracking-widest text-brand-accent font-bold">Our Philosophy</h2>
                         <p className="font-body text-xl md:text-3xl leading-snug">
-                            We are a collective of digital architects based in Honolulu, Hawaii. We don't believe in templates or cookie-cutter solutions. We believe in building digital instruments that demand attention, establish authority, and relentlessly drive conversion.
+                            No templates. No shortcuts. We build digital instruments in Honolulu that demand attention, establish authority, and drive conversion — relentlessly.
                         </p>
                     </div>
                 </div>

@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react"
 import gsap from "gsap"
 import Image from "next/image"
-import Link from "next/link"
 import { Container } from "@/components/ui/Container"
 import { projects } from "@/lib/data"
 
@@ -63,9 +62,11 @@ export default function WorkPage() {
                 {/* Project Grid */}
                 <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20 mt-8">
                     {filteredProjects.map((project, idx) => (
-                        <Link
+                        <a
                             key={project.slug}
-                            href={`#`}
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`work-card group block cursor-pointer ${idx % 2 === 1 ? 'md:mt-32' : ''}`}
                         >
                             <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5">
@@ -87,7 +88,7 @@ export default function WorkPage() {
                                     <p className="font-body text-brand-accent font-medium">{project.metric}</p>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
 

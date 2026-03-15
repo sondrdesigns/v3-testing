@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/Container"
 import { SectionHeading } from "@/components/ui/SectionHeading"
 import { projects } from "@/lib/data"
 import Image from "next/image"
-import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -41,9 +40,11 @@ export function HomePortfolio() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20">
                     {projects.map((project, idx) => (
-                        <Link
+                        <a
                             key={project.slug}
-                            href={`/work`}
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`portfolio-item group block cursor-pointer ${idx % 2 === 1 ? 'md:mt-32' : ''}`}
                         >
                             <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5">
@@ -64,7 +65,7 @@ export function HomePortfolio() {
                                     <p className="font-body text-brand-accent font-medium">{project.metric}</p>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </Container>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 
 export function Footer() {
@@ -8,7 +9,13 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
                     <div className="md:col-span-1 flex flex-col gap-6">
-                        <h3 className="font-heading text-4xl tracking-tight">Sondr Designs</h3>
+                        <Image
+                            src="/logo.webp"
+                            alt="Sondr Designs"
+                            width={64}
+                            height={64}
+                            className="object-contain"
+                        />
                         <p className="font-body text-white/70 max-w-sm">
                             We help businesses grow by crafting elevated digital experiences to drive conversion and define identity in the online space.
                         </p>

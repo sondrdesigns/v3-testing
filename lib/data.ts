@@ -13,6 +13,7 @@ export interface Project {
     metric: string;
     description: string;
     image: string;
+    url: string;
 }
 
 export interface TeamMember {
@@ -66,36 +67,22 @@ export const services: Service[] = [
 
 export const projects: Project[] = [
     {
-        slug: "med-spa-honolulu",
-        client: "Luminary Aesthetics",
-        industry: "Med Spa",
-        metric: "140% Increase in Bookings",
-        description: "A complete brand overhaul and digital platform for Honolulu's premier aesthetic clinic. Focusing on premium feel and frictionless booking.",
-        image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop",
+        slug: "blend-cafe",
+        client: "Blend",
+        industry: "Food & Beverage",
+        metric: "Café Discovery App",
+        description: "A modern web app that helps coffee lovers discover cafés by vibe. Featuring authentication, real-time search, and a beautifully crafted UI.",
+        image: "/projects/blend.webp",
+        url: "https://www.blendcafe.app/",
     },
     {
-        slug: "luxury-real-estate",
-        client: "Oahu Estates",
-        industry: "Real Estate",
-        metric: "$4.2M Attributed Revenue",
-        description: "High-contrast editorial real estate platform designed to showcase luxury properties with cinematic motion and edge-to-edge photography.",
-        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop",
-    },
-    {
-        slug: "legal-partners",
-        client: "Harrison & Co",
-        industry: "Law Firm",
-        metric: "300% ROI on GEO",
-        description: "Modernizing traditional legal services with a sharp, brutalist web presence that establishes authority and drives high-ticket leads.",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
-    },
-    {
-        slug: "home-renovations",
-        client: "Apex Builders",
-        industry: "Construction",
-        metric: "85+ Lighthouse Score",
-        description: "A lightning-fast portfolio site for high-end home renovators, utilizing a custom dark/light mode transition approach.",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
+        slug: "khm-tutoring",
+        client: "KHM Tutoring",
+        industry: "Education",
+        metric: "30% Conversion Boost",
+        description: "A high-performance marketing site for Hawaii's premier K-12 tutoring service. Built to establish authority and drive parent inquiries.",
+        image: "/projects/khm.webp",
+        url: "https://www.khmtutoring.com/",
     },
 ];
 
@@ -103,31 +90,35 @@ export const team = [
     {
         name: "Aizen Chung",
         role: "CEO / Founder",
-        image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop",
+        image: "/aizen-chung.webp",
     },
     {
         name: "Toshio Nagai",
         role: "CTO / Founder",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+        image: "/toshi-nagai.webp",
     },
     {
         name: "Joseph Kim",
         role: "Head of Design",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
+        image: "/joseph-kim.webp",
     },
 ];
 
 export const stats: Stat[] = [
     {
-        value: "99",
-        label: "Lighthouse Performance",
+        value: "96+",
+        label: "Performance Score",
     },
     {
-        value: "<2s",
-        label: "Average Load Time",
+        value: "<1s",
+        label: "Avg Load Time",
     },
     {
-        value: "14",
-        label: "Days Average Build Time",
+        value: "<7",
+        label: "Days Avg Build Time",
+    },
+    {
+        value: "30%",
+        label: "Conversion Boost",
     },
 ];

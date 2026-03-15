@@ -14,6 +14,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sondr Designs",
   description: "We help businesses grow by crafting elevated digital experiences to drive conversion and define identity in the online space.",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
