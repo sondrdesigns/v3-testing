@@ -5,7 +5,6 @@ import gsap from "gsap";
 
 export function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
-    const overlaysRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
         if (!cursorRef.current) return;
@@ -24,61 +23,22 @@ export function CustomCursor() {
             yTo(e.clientY);
         };
 
-        const setupOverlay = (iframe: HTMLIFrameElement) => {
-            if (iframe.dataset.cursorOverlay) return;
-            iframe.dataset.cursorOverlay = "true";
-
-            const overlay = document.createElement("div");
-            overlay.style.cssText = "position:absolute;inset:0;z-index:1;cursor:none;";
-            const parent = iframe.parentElement;
-            if (!parent) return;
-
-            if (getComputedStyle(parent).position === "static") {
-                parent.style.position = "relative";
-            }
-            parent.appendChild(overlay);
-            overlaysRef.current.push(overlay);
-
-            overlay.addEventListener("mousemove", (e) => {
-                xTo(e.clientX);
-                yTo(e.clientY);
-            });
-
-            overlay.addEventListener("mousedown", (e) => {
-                overlay.style.pointerEvents = "none";
-                const el = document.elementFromPoint(e.clientX, e.clientY);
-                if (el && el !== overlay) (el as HTMLElement).click?.();
-                requestAnimationFrame(() => {
-                    overlay.style.pointerEvents = "";
-                });
-            });
+        // Hide cursor when mouse enters an iframe, show when it returns
+        const onDocumentLeave = () => {
+            cursor.style.opacity = "0";
+        };
+        const onDocumentEnter = () => {
+            cursor.style.opacity = "";
         };
 
-        // Set up overlays on existing iframes
-        document.querySelectorAll("iframe").forEach(setupOverlay);
-
-        // Watch for dynamically added iframes (e.g. Calendly)
-        const observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                for (const node of mutation.addedNodes) {
-                    if (node instanceof HTMLIFrameElement) {
-                        setupOverlay(node);
-                    }
-                    if (node instanceof HTMLElement) {
-                        node.querySelectorAll("iframe").forEach(setupOverlay);
-                    }
-                }
-            }
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-
         window.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseleave", onDocumentLeave);
+        document.addEventListener("mouseenter", onDocumentEnter);
 
         return () => {
             window.removeEventListener("mousemove", onMouseMove);
-            observer.disconnect();
-            overlaysRef.current.forEach((o) => o.remove());
-            overlaysRef.current = [];
+            document.removeEventListener("mouseleave", onDocumentLeave);
+            document.removeEventListener("mouseenter", onDocumentEnter);
         };
     }, []);
 
