@@ -3,12 +3,39 @@ import { HomeServices } from "@/components/sections/HomeServices"
 import { Container } from "@/components/ui/Container"
 import { Button } from "@/components/ui/Button"
 import { generateSeo } from "@/lib/metadata"
+import { services } from "@/lib/data"
 
 export const metadata = generateSeo({
-    title: "Services",
-    description: "Websites that perform, design that commands attention, and marketing that puts you in front of the right people. See everything Sondr Designs does for service-based businesses.",
+    title: "Web Design, Development & SEO Services",
+    description: "High-performance websites, conversion-focused design, technical SEO, and local GEO for service businesses. Sondr Designs — Honolulu, Hawaii.",
     path: "/services",
 })
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sondrdesigns.com" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://sondrdesigns.com/services" },
+    ],
+}
+
+const serviceListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Sondr Designs Services",
+    "itemListElement": services.map((s, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+            "@type": "Service",
+            "name": s.title,
+            "description": s.shortDescription,
+            "url": `https://sondrdesigns.com/services#${s.slug}`,
+            "provider": { "@id": "https://sondrdesigns.com/#organization" },
+        },
+    })),
+}
 
 const steps = [
     {
@@ -31,6 +58,8 @@ const steps = [
 export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-black text-white">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }} />
             {/* Hero */}
             <Container className="pt-40 pb-24">
                 <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">

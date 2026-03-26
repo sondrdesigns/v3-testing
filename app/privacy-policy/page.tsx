@@ -1,8 +1,25 @@
+import { generateSeo } from "@/lib/metadata"
 import { Container } from "@/components/ui/Container"
+
+export const metadata = generateSeo({
+    title: "Privacy Policy",
+    description: "Privacy policy for Sondr Designs — how we collect, use, and protect your personal data.",
+    path: "/privacy-policy",
+})
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sondrdesigns.com" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://sondrdesigns.com/privacy-policy" },
+    ],
+}
 
 export default function PrivacyPolicyPage() {
     return (
         <div className="min-h-screen bg-white text-black pt-40 pb-32">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Container className="max-w-4xl mx-auto flex flex-col gap-12">
                 <div className="border-b border-black pb-8">
                     <h1 className="text-5xl md:text-7xl font-heading font-black tracking-tighter uppercase mb-4">Privacy Policy</h1>

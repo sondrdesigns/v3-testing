@@ -1,22 +1,19 @@
 "use client"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { useRouter } from "next/navigation"
+import Script from "next/script"
 import { Container } from "@/components/ui/Container"
 import { Button } from "@/components/ui/Button"
-import { InlineWidget } from "react-calendly"
 
 export default function ContactPage() {
     const containerRef = useRef<HTMLDivElement>(null)
     const router = useRouter()
-    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
-        setMounted(true)
         const ctx = gsap.context(() => {
-            gsap.fromTo(".contact-element",
-                { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out", delay: 0.2 }
+            gsap.from(".contact-element",
+                { y: 50, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" }
             )
         }, containerRef)
 
@@ -89,32 +86,11 @@ export default function ContactPage() {
                     </form>
                 </div>
 
-                {/* Calendly */}
+                {/* iClosed */}
                 <div className="w-full lg:w-1/2 mt-12 lg:mt-0 flex flex-col pt-12 lg:pt-0 lg:border-l lg:border-white/20 lg:pl-16">
                     <h2 className="text-3xl font-heading font-medium tracking-tight uppercase mb-6">Schedule a Consultation</h2>
-                    <div className="w-full min-h-[700px] border border-white/20 bg-white/5 relative flex justify-center items-start pt-4 rounded-xl overflow-hidden">
-                        <div className="absolute inset-0 flex items-center justify-center -z-10">
-                            <span className="font-subhead uppercase text-sm text-white/40 tracking-widest">Loading Calendar...</span>
-                        </div>
-                        {mounted && (
-                            <InlineWidget
-                                url="https://calendly.com/aizen-sondrdesigns/discovery-call"
-                                styles={{
-                                    height: '700px',
-                                    width: '100%',
-                                    marginTop: '-10px',
-                                    borderRadius: '12px'
-                                }}
-                                pageSettings={{
-                                    backgroundColor: '111111',
-                                    hideEventTypeDetails: true,
-                                    hideLandingPageDetails: true,
-                                    primaryColor: '004dff',
-                                    textColor: 'ffffff'
-                                }}
-                            />
-                        )}
-                    </div>
+                    <div className="iclosed-widget" data-url="https://app.iclosed.io/e/sondrdesigns/discovery-call" title="15-Minute Sondr Discovery Call" style={{ width: '100%', height: '620px' }}></div>
+                    <Script src="https://app.iclosed.io/assets/widget.js" strategy="lazyOnload" />
                 </div>
 
             </Container>

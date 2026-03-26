@@ -32,7 +32,7 @@ export function Navbar() {
     return (
         <>
             {/* Logo — sits outside the blended header so it's never inverted */}
-            <Link href="/" className="fixed top-0 left-1/2 -translate-x-1/2 z-[60] h-12 flex items-center">
+            <Link href="/" className="fixed top-0 left-1/2 -translate-x-1/2 z-[60] h-14 flex items-center">
                 <Image
                             src="/favicon-opt.png"
                     alt="Sondr Designs"
@@ -49,14 +49,14 @@ export function Navbar() {
                     isScrolled ? "bg-white text-black border-black/10 shadow-sm" : "bg-transparent text-white mix-blend-difference"
                 )}
             >
-                <div className="grid grid-cols-3 h-12 items-center px-6 md:px-12 lg:px-20 w-full">
+                <div className="grid grid-cols-3 h-14 items-center px-6 md:px-12 lg:px-20 w-full">
                     {/* Left links */}
                     <nav className="hidden md:flex gap-8 justify-end">
                         {leftLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-body hover:text-brand-accent transition-colors"
+                                className="text-base font-body hover:text-brand-accent transition-colors"
                             >
                                 {link.name}
                             </Link>
@@ -81,7 +81,7 @@ export function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-body hover:text-brand-accent transition-colors"
+                                className="text-base font-body hover:text-brand-accent transition-colors"
                             >
                                 {link.name}
                             </Link>

@@ -1,4 +1,11 @@
+import { generateSeo } from "@/lib/metadata"
 import { HomeHero } from "@/components/sections/HomeHero"
+
+export const metadata = generateSeo({
+  title: "Web Design & Development Agency — Honolulu, Hawaii",
+  description: "Sondr Designs builds high-performance websites, conversion-focused design, and SEO for service businesses in Hawaii and beyond. Book a free consultation.",
+  path: "/",
+})
 import { HomeStats } from "@/components/sections/HomeStats"
 import { HomePortfolio } from "@/components/sections/HomePortfolio"
 import { HomeServices } from "@/components/sections/HomeServices"

@@ -17,18 +17,15 @@ export function HomeHero() {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({ defaults: { ease: "power4.out" } })
 
-            tl.fromTo(".hero-line",
-                { y: 100, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1.2, stagger: 0.1, delay: 0.2 }
+            tl.from(".hero-line",
+                { y: 100, opacity: 0, duration: 1.2, stagger: 0.1 }
             )
-                .fromTo(paragraphRef.current,
-                    { y: 20, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1 },
+                .from(paragraphRef.current,
+                    { y: 20, opacity: 0, duration: 1 },
                     "-=0.8"
                 )
-                .fromTo(".hero-cta",
-                    { y: 20, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1 },
+                .from(".hero-cta",
+                    { y: 20, opacity: 0, duration: 1 },
                     "-=0.8"
                 )
         }, containerRef)

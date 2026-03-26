@@ -21,7 +21,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-kufam), sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
 
   ::selection {

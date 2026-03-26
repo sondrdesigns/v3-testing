@@ -41,8 +41,8 @@ export default function WorkPage() {
                     </p>
                 </div>
 
-                {/* Sticky Filter */}
-                <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md py-4 border-b border-black/10 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-24 lg:px-24 w-screen overflow-x-auto no-scrollbar flex items-center min-h-[56px]">
+                {/* Filter */}
+                <div className="py-4 border-b border-black/10 overflow-x-auto no-scrollbar flex items-center min-h-[56px]">
                     <div className="flex gap-8 whitespace-nowrap min-w-max justify-center items-center">
                         {industries.map((industry) => (
                             <button
@@ -72,7 +72,7 @@ export default function WorkPage() {
                             <div className="relative aspect-[4/5] w-full mb-6 overflow-hidden bg-black/5 border border-black/10">
                                 <Image
                                     src={project.image}
-                                    alt={project.client}
+                                    alt={project.imageAlt}
                                     fill
                                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]"
                                     sizes="(max-width: 768px) 100vw, 50vw"

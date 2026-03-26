@@ -25,6 +25,42 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": "https://sondrdesigns.com/#organization",
+      "name": "Sondr Designs",
+      "url": "https://sondrdesigns.com",
+      "logo": { "@type": "ImageObject", "url": "https://sondrdesigns.com/logo.webp" },
+      "image": "https://sondrdesigns.com/logo.webp",
+      "description": "We help businesses grow by crafting elevated digital experiences to drive conversion and define identity in the online space.",
+      "telephone": "+18087219350",
+      "email": "studio@sondrdesigns.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Honolulu",
+        "addressRegion": "HI",
+        "addressCountry": "US"
+      },
+      "areaServed": { "@type": "City", "name": "Honolulu" },
+      "sameAs": [
+        "https://www.instagram.com/sondr.designs/",
+        "https://www.linkedin.com/company/sondrdesigns/",
+        "https://www.facebook.com/people/Sondr-Designs/61583928612114/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sondrdesigns.com/#website",
+      "url": "https://sondrdesigns.com",
+      "name": "Sondr Designs",
+      "publisher": { "@id": "https://sondrdesigns.com/#organization" }
+    }
+  ]
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,6 +71,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased flex flex-col min-h-screen`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <CustomCursor />
         <Navbar />
         <main className="flex-grow">{children}</main>

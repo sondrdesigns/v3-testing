@@ -1,0 +1,25 @@
+# Sondr Designs
+> Sondr Designs is a web design and development agency based in Honolulu, Hawaii. We build high-performance websites, conversion-focused design, and SEO strategies for service businesses.
+
+## Core Services
+- [Web Design & Development](https://sondrdesigns.com/services): Custom Next.js websites built for speed, conversion, and scalability. Average build time under seven days.
+- [Website Design](https://sondrdesigns.com/services): Conversion-focused UI/UX design. No templates — every project is built from scratch.
+- [Conversion Rate Optimization](https://sondrdesigns.com/services): User experience design that guides visitors to book, call, or buy.
+- [SEO](https://sondrdesigns.com/services): Technical SEO built into site architecture. Keyword strategy, content optimization, schema markup.
+- [Local SEO](https://sondrdesigns.com/services): Google Business Profile management, local directory sync, location-based landing pages for Hawaii businesses.
+
+## Portfolio
+- [Our Work](https://sondrdesigns.com/work): Portfolio of completed projects including Blend (café discovery web app) and KHM Tutoring (Hawaii K-12 tutoring, 30% conversion increase).
+
+## Company
+- [The Studio](https://sondrdesigns.com/studio): About our team — Aizen Chung (CEO/Founder), Toshio Nagai (CTO/Founder), Joseph Kim (Head of Design). Based in Honolulu, Hawaii.
+- [Contact](https://sondrdesigns.com/contact): Book a free discovery call or send a project inquiry.
+
+## Key Facts
+- Founded and headquartered in Honolulu, Hawaii, USA
+- Specializes in service-based businesses
+- Average website build time: under 7 days
+- Average Lighthouse performance score: 96+
+- Average page load time: under 1 second
+- Contact: studio@sondrdesigns.com | (808) 721-9350
+- Social: https://www.instagram.com/sondr.designs/ | https://www.linkedin.com/company/sondrdesigns/

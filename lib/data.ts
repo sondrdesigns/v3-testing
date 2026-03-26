@@ -13,6 +13,7 @@ export interface Project {
     metric: string;
     description: string;
     image: string;
+    imageAlt: string;
     url: string;
 }
 
@@ -73,6 +74,7 @@ export const projects: Project[] = [
         metric: "Café Discovery App",
         description: "A modern web app that helps coffee lovers discover cafés by vibe. Featuring authentication, real-time search, and a beautifully crafted UI.",
         image: "/projects/blend.webp",
+        imageAlt: "Blend café discovery web app — browse and discover local cafés by vibe and atmosphere",
         url: "https://www.blendcafe.app/",
     },
     {
@@ -82,6 +84,7 @@ export const projects: Project[] = [
         metric: "30% Conversion Boost",
         description: "A high-performance marketing site for Hawaii's premier K-12 tutoring service. Built to establish authority and drive parent inquiries.",
         image: "/projects/khm.webp",
+        imageAlt: "KHM Tutoring — Hawaii K-12 tutoring service website homepage built by Sondr Designs",
         url: "https://www.khmtutoring.com/",
     },
 ];
