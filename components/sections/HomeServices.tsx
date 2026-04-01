@@ -26,18 +26,23 @@ export function HomeServices() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            gsap.set(".service-card", { willChange: "transform, opacity" })
+
             gsap.fromTo(
                 ".service-card",
-                { y: 40, opacity: 0 },
+                { y: 40, autoAlpha: 0 },
                 {
                     y: 0,
-                    opacity: 1,
-                    duration: 0.9,
-                    stagger: 0.12,
+                    autoAlpha: 1,
+                    duration: 0.7,
+                    stagger: 0.08,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: "top 70%",
+                        start: "top 75%",
+                    },
+                    onComplete: () => {
+                        gsap.set(".service-card", { willChange: "auto" })
                     },
                 }
             )
@@ -75,7 +80,7 @@ export function HomeServices() {
                                     "service-card group relative flex flex-col gap-6 rounded-none border transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] cursor-pointer",
                                     colSpans[index],
                                     isLarge ? "p-8 md:p-10 lg:p-12" : "p-8 md:p-10",
-                                    "bg-white/[0.04] backdrop-blur-sm border-white/[0.08]",
+                                    "bg-white/[0.04] border-white/[0.08]",
                                     "hover:border-white/20 hover:bg-white/[0.07] hover:shadow-[0_8px_32px_rgba(0,77,255,0.12)]"
                                 )}
                                 onMouseEnter={() => setHoveredIndex(index)}

@@ -87,6 +87,16 @@ export const projects: Project[] = [
         imageAlt: "KHM Tutoring — Hawaii K-12 tutoring service website homepage built by Sondr Designs",
         url: "https://www.khmtutoring.com/",
     },
+    {
+        slug: "pando-surgical",
+        client: "Pando Surgical",
+        industry: "Medical",
+        metric: "Product Launch Site",
+        description: "A sleek product-focused site for an LA-based medical device startup. Designed to showcase their flagship LapRotator instrument and establish credibility with surgeons.",
+        image: "/projects/pando.webp",
+        imageAlt: "Pando Surgical — medical device startup website featuring the LapRotator laparoscopic instrument",
+        url: "https://www.pandosurgical.com/",
+    },
 ];
 
 export const team = [
